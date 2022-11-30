@@ -48,7 +48,7 @@ class Onboarding extends StatelessWidget {
               Center(
                 child: Container(
                   width: double.infinity,
-                  height: 400,
+                  height: 350,
                   decoration: BoxDecoration(
                     image: new DecorationImage(
                       image: ExactAssetImage("images/onboardimg.png"),
