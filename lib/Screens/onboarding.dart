@@ -12,12 +12,12 @@ class Onboarding extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   left: 10,
                   top: 10,
                   bottom: 40,
                 ),
-                child: Row(children: [
+                child: Row(children: const [
                   CircleAvatar(
                     backgroundImage: AssetImage(
                       "images/mainlogo.png",
@@ -30,13 +30,13 @@ class Onboarding extends StatelessWidget {
               Center(
                 child: Container(
                   margin: EdgeInsets.only(bottom: 5.0),
-                  child: Text(
+                  child: const Text(
                     "Hi, Nice to meet you",
                     style: TextStyle(color: Colors.pink),
                   ),
                 ),
               ),
-              Center(
+              const Center(
                 child: Text(
                   "Welcome to Hair Brace",
                   style: TextStyle(
@@ -49,8 +49,8 @@ class Onboarding extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   height: 350,
-                  decoration: BoxDecoration(
-                    image: new DecorationImage(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
                       image: ExactAssetImage("images/onboardimg.png"),
                     ),
                   ),
@@ -62,7 +62,7 @@ class Onboarding extends StatelessWidget {
                 margin: EdgeInsets.all(16),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(
                           10,
@@ -71,12 +71,12 @@ class Onboarding extends StatelessWidget {
                     ),
                     maximumSize: Size(double.infinity, 100),
                     backgroundColor: Colors.pinkAccent,
-                    side: BorderSide(
+                    side: const BorderSide(
                       color: Colors.pinkAccent,
                     ),
                   ),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Log In',
                     style: TextStyle(
                       color: Colors.white,
@@ -87,13 +87,13 @@ class Onboarding extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 60,
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   right: 16,
                   left: 16,
                 ),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(
                           10,
@@ -102,12 +102,12 @@ class Onboarding extends StatelessWidget {
                     ),
                     maximumSize: Size(double.infinity, 100),
                     backgroundColor: Colors.white,
-                    side: BorderSide(
+                    side: const BorderSide(
                       color: Colors.pinkAccent,
                     ),
                   ),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Sign Up',
                     style: TextStyle(
                       color: Colors.pink,

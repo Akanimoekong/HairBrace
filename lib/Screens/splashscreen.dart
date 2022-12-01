@@ -1,10 +1,18 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:hair_brace/Screens/onboarding.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Timer(
+        const Duration(seconds: 3),
+            () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (BuildContext context) => const Onboarding(),),),);
+
     return MaterialApp(
       home: Scaffold(
         body: Center(
@@ -16,7 +24,7 @@ class SplashScreen extends StatelessWidget {
                 "images/mainlogo.png",
               ),
             ),
-            Center(
+            const Center(
               child: Text(
                 "The essence of hair",
                 style: TextStyle(
@@ -32,3 +40,6 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
+
+
+
