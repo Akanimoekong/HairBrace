@@ -5,7 +5,7 @@ import 'package:hair_brace/Screens/onboarding.dart';
 import 'Screens/splashscreen.dart';
 
 void main() {
-  runApp(const SplashScreen());
+  runApp(const Onboarding());
 }
 
 

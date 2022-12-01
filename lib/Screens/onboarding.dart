@@ -20,7 +20,7 @@ class Onboarding extends StatelessWidget {
                 child: Row(children: const [
                   CircleAvatar(
                     backgroundImage: AssetImage(
-                      "images/mainlogo.png",
+                      "images/mymainlogo.png",
                     ),
                     backgroundColor: Colors.transparent,
                     radius: 25,
