@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 3),
             () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const Onboarding(),),),);
 
@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
                 "images/mainlogo.png",
               ),
             ),
-            Center(
+            const Center(
               child: Text(
                 "The essence of hair",
                 style: TextStyle(
