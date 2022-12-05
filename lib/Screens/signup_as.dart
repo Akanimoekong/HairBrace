@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/signup_as.dart';
 
-class Onboarding extends StatelessWidget {
-  const Onboarding({Key? key}) : super(key: key);
+
+class SignUpAs extends StatelessWidget {
+  const SignUpAs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,34 +11,10 @@ class Onboarding extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              Container(
-                margin: const EdgeInsets.only(
-                  left: 10,
-                  top: 10,
-                  bottom: 40,
-                ),
-                child: Row(children: const [
-                  CircleAvatar(
-                    backgroundImage: AssetImage(
-                      "images/mymainlogo.png",
-                    ),
-                    backgroundColor: Colors.transparent,
-                    radius: 25,
-                  ),
-                ]),
-              ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 5.0),
-                  child: const Text(
-                    "Hi, Nice to meet you",
-                    style: TextStyle(color: Colors.pink),
-                  ),
-                ),
-              ),
+              SizedBox(height: 100,),
               const Center(
                 child: Text(
-                  "Welcome to Hair Brace",
+                  "Sign Up as a",
                   style: TextStyle(
                       color: Colors.pink,
                       fontWeight: FontWeight.bold,
@@ -51,7 +27,7 @@ class Onboarding extends StatelessWidget {
                   height: 350,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: ExactAssetImage("images/onboardimg.png"),
+                      image: ExactAssetImage("images/signupas.png"),
                     ),
                   ),
                 ),
@@ -77,7 +53,7 @@ class Onboarding extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: const Text(
-                    'Log In',
+                    'Customer',
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -106,15 +82,9 @@ class Onboarding extends StatelessWidget {
                       color: Colors.pinkAccent,
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => SignUpAs(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   child: const Text(
-                    'Sign Up',
+                    'HairStylist',
                     style: TextStyle(
                       color: Colors.pink,
                     ),
