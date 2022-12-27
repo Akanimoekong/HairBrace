@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hair_brace/Screens/new_signup.dart';
 
 
 class SignUpAs extends StatelessWidget {
@@ -51,7 +52,9 @@ class SignUpAs extends StatelessWidget {
                       color: Colors.pinkAccent,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => NewSignup()));
+                  },
                   child: const Text(
                     'Customer',
                     style: TextStyle(
