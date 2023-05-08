@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/new_signup.dart';
+import 'package:hair_brace/Screens/customer_signup.dart';
+import 'package:hair_brace/Screens/hairstylist_signup.dart';
 
 
 class SignUpAs extends StatelessWidget {
@@ -53,7 +54,7 @@ class SignUpAs extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => NewSignup()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerSignUp()));
                   },
                   child: const Text(
                     'Customer',
@@ -85,7 +86,10 @@ class SignUpAs extends StatelessWidget {
                       color: Colors.pinkAccent,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HairStylistSignUp()));
+
+                  },
                   child: const Text(
                     'HairStylist',
                     style: TextStyle(

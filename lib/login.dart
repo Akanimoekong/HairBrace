@@ -1,164 +1,233 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hair_brace/Screens/update_profile.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+import 'Screens/customer_signup.dart';
+
+class LoginScreen extends StatefulWidget {
+  LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+
+@override
+  void dispose() {
+  emailController.dispose();
+  passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.all(16),
-                child: Text('Login \n Welcome Back',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 38,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.pink)),
-              ),
-              Container(
-                  margin: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.pink),
-                    borderRadius: BorderRadius.circular(13),
-                    color: Colors.white, //boxShadow: BoxShadow
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Enter Your username/Email' , hintStyle: TextStyle(color: Colors.pink)
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(top: 80),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 25),
+                      child: Text(
+                        "Welcome Back \n Login",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.pink,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
                     ),
-                  )),
-              //password
-              Container(
-                margin: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.pink),
-                  borderRadius: BorderRadius.circular(13),
-                  color: Colors.white, //boxShadow: BoxShadow
-                ),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    // prefixIcon: ,
-                    suffixIcon: Icon(Icons.visibility_off),
-                    border: InputBorder.none,
-                    hintText: 'Enter Your Password',  hintStyle: TextStyle(color: Colors.pink)
                   ),
-                ),
-              ),
+                  Container(
+                    margin: EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        hintText: "Enter Your Username / Email",
+                        hintStyle: TextStyle(color: Colors.pink),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.pink,
+                            width: 0.8,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.pink,
+                            width: 0.8,
+                          ),
+                        ),                  ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: passwordController,
+                      decoration: InputDecoration(
+                        hintText: "Enter Your Password",
+                        hintStyle: TextStyle(color: Colors.pink),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.pink,
+                            width: 0.8,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.pink,
+                            width: 0.8,
+                          ),
+                        ),                  ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // log('SignUp successful');
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => UpdateProfile()));
 
-              //login
-
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: ElevatedButton(
-                    //height: 50,width: 500 ,
-
-                    onPressed: () {},
-                    child: Center(
+                      },
                       child: Text(
                         'Login',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFFF63D68),
+                        // backgroundColor: Colors.pink,
                       ),
                     ),
-                  )),
+                  ),
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Don\'t have an account?',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                            ),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder:(context) => CustomerSignUp()));
 
-              //dont have an acccount
-              SizedBox(height: 10),
-
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don`t have an account?',
-                      style: TextStyle(),
+                              },
+                              child: Text(
+                                'Sign up',
+                                style: TextStyle(
+                                  color: Colors.pink,
+                                  fontSize: 18,
+                                ),
+                              ))
+                        ],
+                      ),
                     ),
-                    TextButton(
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    child: Center(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Divider(
+                              thickness: 1.5,
+                              color: Colors.pink,
+                            ),
+                          ),
+                          Text('  Or  '),
+                          Expanded(
+                            child: Divider(
+                              thickness: 1.5,
+                              color: Colors.pink,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: EdgeInsets.all(8.0),
+                    child: ElevatedButton.icon(
                       onPressed: () {},
-                      child: Text(
-                        'Signup',
+                      label: Text(
+                        'Login with Facebook',
                         style: TextStyle(
-                            color: Colors.pink, fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue.shade700,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                        // shape: RoundedRectangleBorder(
+                        //     borderRadius: BorderRadius.circular(15),
+
+                      ),
+                      icon: Icon(Icons.facebook_rounded),
                     ),
-                  ],
-                ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: EdgeInsets.all(8.0),
+                    child: OutlinedButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        'Login with Google',
+                        style: TextStyle(
+                          color: Colors.pink,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(color: Colors.pink),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      icon: Icon(Icons.ac_unit)
+                    ),
+                  ),
+                ],
               ),
+            ),
+          ),
 
-              SizedBox(
-                height: 20,
-                width: 100,
-                child: Divider(
-                  thickness: 1,
-                  color: Colors.pink,
-                ),
-              ),
-
-              SizedBox(height: 10),
-
-              //button login facebook
-
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Container(
-                    //height: 50,width: 500 ,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.blue[900],
-                      borderRadius: BorderRadius.circular(
-                        13,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Login With Facebook',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  )),
-
-              // login google
-
-              SizedBox(height: 10),
-
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Container(
-                    //height: 50,width: 500 ,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.pink),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        13,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Loginm with Google',
-                        style: TextStyle(
-                            color: Colors.pink,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  )),
-            ]),
-      ),
-    ));
+        ),
+    );
   }
+
+  Future signIn () async{
+    await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim())
+        .then((value) {})
+        .onError((error, stackTrace) {});  }
 }

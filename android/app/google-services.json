@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "641116125880",
+    "project_id": "hairbrace-7ed29",
+    "storage_bucket": "hairbrace-7ed29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641116125880:android:ff6145ff53748e8d0a124d",
+        "android_client_info": {
+          "package_name": "com.example.hair_brace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641116125880-ghk42ov3cpqu9gdul5f7q9a19e383svj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hair_brace",
+            "certificate_hash": "23e1291febcda0fe4d2700f4282cf758148e1f4b"
+          }
+        },
+        {
+          "client_id": "641116125880-ak4pe95elqvo65u2nh2sa1igk4821oj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEuxhDQRCnDbyfCcWue07X9O3O3zKByEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641116125880-ak4pe95elqvo65u2nh2sa1igk4821oj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
