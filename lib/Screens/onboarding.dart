@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hair_brace/Screens/new_login.dart';
 import 'package:hair_brace/Screens/signup_as.dart';
 import 'package:hair_brace/generated/assets.dart';
 import 'package:hair_brace/login.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Onboarding extends StatelessWidget {
   Onboarding({Key? key}) : super(key: key);
@@ -11,30 +14,15 @@ class Onboarding extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              margin: const EdgeInsets.only(
-                left: 10,
-                top: 10,
-                bottom: 40,
-              ),
-              child: Row(children: const [
-                CircleAvatar(
-                  backgroundImage: AssetImage(
-                    // Assets.imagesOnboardimg,
-                    "images/mymainlogo.png",
-                  ),
-                  backgroundColor: Colors.transparent,
-                  radius: 25,
-                ),
-              ]),
-            ),
             Center(
               child: Container(
                 margin: EdgeInsets.only(bottom: 5.0),
                 child: const Text(
                   "Hi, Nice to meet you",
-                  style: TextStyle(color: Colors.pink),
+                  style: TextStyle(color: Colors.blue),
                 ),
               ),
             ),
@@ -42,22 +30,69 @@ class Onboarding extends StatelessWidget {
               child: Text(
                 "Welcome to Hair Brace",
                 style: TextStyle(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
             ),
             Center(
               child: Container(
-                width: double.infinity,
-                height: 350,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: ExactAssetImage(Assets.imagesOnboardimg),
-                  ),
-                ),
+                child: SvgPicture.asset('images/welcome.svg', fit: BoxFit.fill,
+                 ),
               ),
             ),
+            Container(
+              width: double.infinity,
+              height: 60,
+              margin: const EdgeInsets.only(
+                right: 16,
+                left: 16,
+              ),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NewLogin(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset('images/google.svg',height: 30, width: 30,),
+                       Text(
+                        '    Continue With Google',
+                        style: TextStyle(
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(
+                          10,
+                        ),
+                      ),
+                    ),
+                    maximumSize: Size(double.infinity, 100),
+                    backgroundColor: Colors.white,
+                    side: const BorderSide(
+                      color: Colors.blueAccent,
+                    ),
+                  )
+/*                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignUpAs(),
+                      ),
+                    );*/
+              ),
+            ),
+
             Container(
               width: double.infinity,
               height: 60,
@@ -72,16 +107,17 @@ class Onboarding extends StatelessWidget {
                     ),
                   ),
                   maximumSize: Size(double.infinity, 100),
-                  backgroundColor: Colors.pinkAccent,
+                  backgroundColor: Colors.blue,
                   side: const BorderSide(
-                    color: Colors.pinkAccent,
+                    color: Colors.blue,
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context) => LoginScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 child: const Text(
-                  'Log In',
+                  'Sign Up',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -105,9 +141,9 @@ class Onboarding extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    'Sign Up',
+                    'Sign In',
                     style: TextStyle(
-                      color: Colors.pink,
+                      color: Colors.white,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -119,10 +155,7 @@ class Onboarding extends StatelessWidget {
                       ),
                     ),
                     maximumSize: Size(double.infinity, 100),
-                    backgroundColor: Colors.white,
-                    side: const BorderSide(
-                      color: Colors.pinkAccent,
-                    ),
+                    backgroundColor: Colors.blue[100],
                   )
 /*                    Navigator.push(
                       context,

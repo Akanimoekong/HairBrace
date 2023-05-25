@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Welcome Back \n Login",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.pink,
+                            color: Colors.blue,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),
@@ -52,18 +52,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: emailController,
                       decoration: InputDecoration(
                         hintText: "Enter Your Username / Email",
-                        hintStyle: TextStyle(color: Colors.pink),
+                        hintStyle: TextStyle(color: Colors.blue),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
-                            color: Colors.pink,
+                          borderSide: const BorderSide(
+                            color: Colors.blue,
                             width: 0.8,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.pink,
+                            color: Colors.blue,
                             width: 0.8,
                           ),
                         ),                  ),
@@ -75,18 +75,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: passwordController,
                       decoration: InputDecoration(
                         hintText: "Enter Your Password",
-                        hintStyle: TextStyle(color: Colors.pink),
+                        hintStyle: TextStyle(color: Colors.blue),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.pink,
+                            color: Colors.blue,
                             width: 0.8,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.pink,
+                            color: Colors.blue,
                             width: 0.8,
                           ),
                         ),                  ),
@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFF63D68),
-                        // backgroundColor: Colors.pink,
+                        // backgroundColor: Colors.blue,
                       ),
                     ),
                   ),
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Text(
                                 'Sign up',
                                 style: TextStyle(
-                                  color: Colors.pink,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                 ),
                               ))
@@ -153,14 +153,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           Expanded(
                             child: Divider(
                               thickness: 1.5,
-                              color: Colors.pink,
+                              color: Colors.blue,
                             ),
                           ),
                           Text('  Or  '),
                           Expanded(
                             child: Divider(
                               thickness: 1.5,
-                              color: Colors.pink,
+                              color: Colors.blue,
                             ),
                           )
                         ],
@@ -201,12 +201,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       label: Text(
                         'Login with Google',
                         style: TextStyle(
-                          color: Colors.pink,
+                          color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: Colors.pink),
+                        side: BorderSide(color: Colors.blue),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
