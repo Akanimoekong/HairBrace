@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/onboarding.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'Pages/onboarding.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
    await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 
 }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/dashboard.dart';
-import 'package:hair_brace/Screens/recovery_email.dart';
+
+
+import 'dashboard.dart';
 
 class CreatePassword extends StatefulWidget {
   const CreatePassword({Key? key}) : super(key: key);

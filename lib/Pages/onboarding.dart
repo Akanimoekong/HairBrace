@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/new_login.dart';
-import 'package:hair_brace/Screens/signup_as.dart';
+import 'package:hair_brace/Pages/signup_as.dart';
+
 import 'package:hair_brace/generated/assets.dart';
 import 'package:hair_brace/login.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'new_login.dart';
 
 class Onboarding extends StatelessWidget {
   Onboarding({Key? key}) : super(key: key);

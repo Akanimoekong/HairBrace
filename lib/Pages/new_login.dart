@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/recovery_email.dart';
-import 'package:hair_brace/Screens/signup_as.dart';
+import 'package:hair_brace/Pages/recovery_email.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NewLogin extends StatefulWidget {

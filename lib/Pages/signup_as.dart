@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hair_brace/Screens/customer_signup.dart';
-import 'package:hair_brace/Screens/hairstylist_signup.dart';
+
+import 'customer_signup.dart';
+import 'hairstylist_signup.dart';
+
 
 
 class SignUpAs extends StatelessWidget {
