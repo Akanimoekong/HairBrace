@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:hair_brace/Pages/view_hairdresser.dart';
+import 'package:hair_brace/Reusables/bottom_nav.dart';
 import 'package:hair_brace/Reusables/star_widget.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 
@@ -38,7 +39,6 @@ class _DashboardState extends State<Dashboard> {
         automaticallyImplyLeading: false,
         flexibleSpace: Container(
           margin: EdgeInsets.only(top: 40, bottom: 8),
-          // color: Colors.cyanAccent,
           width: MediaQuery.of(context).size.width,
           child: Center(
             child: Row(
@@ -245,7 +245,6 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                   );
-
                 },
 
               ),
@@ -442,7 +441,6 @@ class _DashboardState extends State<Dashboard> {
           ),
         ],
       ),
-      // leading: Icon(Icons.access_alarm_outlined),
     );
   }
 }

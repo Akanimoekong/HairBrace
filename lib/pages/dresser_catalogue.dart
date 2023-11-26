@@ -90,8 +90,7 @@ class _DresserCatalogueState extends State<DresserCatalogue> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                margin: EdgeInsets.only(top: 1, bottom: 8),
+              const Divider(
                 height: 1.0,
                 color: Colors.black12,
               ),
@@ -105,7 +104,7 @@ class _DresserCatalogueState extends State<DresserCatalogue> {
               const TabBar(
                 tabs: [
                   Tab(
-                    child: Text('Adults'),
+                    child: Text('Adults', ),
                   ),
                   Tab(
                     child: Text('Children'),
@@ -246,13 +245,13 @@ class _DresserCatalogueState extends State<DresserCatalogue> {
                               Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: MediaQuery.of(context).size.height / 9,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(16),
                                   ),
                                   image: DecorationImage(
                                     image:
-                                        AssetImage('images/ghanaweaving.png'),
+                                        AssetImage('images/mainweaving.png'),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -289,7 +288,7 @@ class _DresserCatalogueState extends State<DresserCatalogue> {
                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                         color: Colors.blue[400],
                                         onPressed: () {
-                                          SnackBar mSnackbar = SnackBar(
+                                          SnackBar mSnackbar = const SnackBar(
                                             content: Icon(
                                               Icons.face,
                                               color: Colors.red,

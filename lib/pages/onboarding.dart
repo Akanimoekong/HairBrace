@@ -142,12 +142,6 @@ class Onboarding extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text(
-                    'Sign In',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
@@ -156,8 +150,14 @@ class Onboarding extends StatelessWidget {
                         ),
                       ),
                     ),
-                    maximumSize: Size(double.infinity, 100),
+                    maximumSize: const Size(double.infinity, 100),
                     backgroundColor: Colors.blue[100],
+                  ),
+                  child: const Text(
+                    'Sign In',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   )
 /*                    Navigator.push(
                       context,

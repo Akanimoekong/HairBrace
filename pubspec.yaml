@@ -92,13 +92,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Post No Bills Colombo
-      fonts:
-        - asset: fonts/postnobillscolombo_medium.ttf
-    - family:
-      fonts:
-        - asset: fonts/postnobillscolombo_medium.ttf
+  #fonts:
+#    - family: Post No Bills Colombo
+#      fonts:
+#        - asset: fonts/postnobillscolombo_medium.ttf
+#    - family:
+#      fonts:
+#        - asset: fonts/postnobillscolombo_medium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

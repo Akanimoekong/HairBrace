@@ -23,6 +23,8 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
   String cardNameStr = "AKANIMO EKONG";
   String nameOfHair = "Ghana Weaving";
   String price = "500";
+  String mPrice = "500";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +32,7 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16),
         width: MediaQuery.of(context).size.width,
-
+        height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,7 +84,8 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                       children: [
                         Text(
                           cardNameStr,
-                          style: const TextStyle(color: Colors.white, fontSize: 16),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 16),
                         ).apply(
                           constraint: Constraint(
                               margin: const EdgeInsets.only(left: 24, top: 24),
@@ -143,11 +146,12 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 4.5,
                     child: GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 220,
-                          childAspectRatio: 0.86,
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 12),
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 220,
+                              childAspectRatio: 0.86,
+                              crossAxisSpacing: 16,
+                              mainAxisSpacing: 12),
                       itemBuilder: (context, position) {
                         return Card(
                           elevation: 10,
@@ -171,14 +175,15 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                                   },
                                   child: Container(
                                     width: MediaQuery.of(context).size.width,
-                                    height: MediaQuery.of(context).size.height / 9,
+                                    height:
+                                        MediaQuery.of(context).size.height / 9,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(16),
                                       ),
                                       image: DecorationImage(
-                                        image:
-                                            AssetImage('images/ghanaweaving.png'),
+                                        image: AssetImage(
+                                            'images/ghanaweaving.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
@@ -186,11 +191,13 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                                 ),
                                 Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: MediaQuery.of(context).size.height / 10,
+                                  height:
+                                      MediaQuery.of(context).size.height / 10,
                                   padding: EdgeInsets.symmetric(
                                       vertical: 2, horizontal: 8),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
@@ -214,7 +221,8 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                                       SizedBox(
                                         height: 35,
                                         width:
-                                            MediaQuery.of(context).size.width / 0.5,
+                                            MediaQuery.of(context).size.width /
+                                                0.5,
                                         child: MaterialButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -226,7 +234,8 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                                                 Icons.face,
                                                 color: Colors.red,
                                               ),
-                                              backgroundColor: Colors.transparent,
+                                              backgroundColor:
+                                                  Colors.transparent,
                                             );
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(mSnackbar);
@@ -234,7 +243,8 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                                           child: Text(
                                             'Pick',
                                             style: TextStyle(
-                                                color: Colors.white, fontSize: 8),
+                                                color: Colors.white,
+                                                fontSize: 8),
                                           ),
                                         ),
                                       )
@@ -251,13 +261,14 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 8,
+                    height: MediaQuery.of(context).size.height / 10,
                     child: Row(
                       children: [
                         Flexible(
                             child: TextFormField(
                           decoration: InputDecoration(
                             labelText: 'Appointment Date',
+                            labelStyle: TextStyle(fontSize: 12),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.black38,
@@ -270,30 +281,37 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                         ),
                         Flexible(
                             child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: 'Appointment Time',
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.black38,
-                                  ),
-                                ),
+                          decoration: InputDecoration(
+                            labelText: 'Appointment Time',
+                            labelStyle: TextStyle(fontSize: 12),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black38,
                               ),
-                            )),
+                            ),
+                          ),
+                        )),
                       ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Total:'),
-                      Text('N2,000'),
-                    ],
+                  SizedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total:',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text('N2,000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue)),
+                      ],
+                    ),
                   ),
-
                 ],
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 8),
                 width: MediaQuery.of(context).size.width,
                 height: 60,
                 child: MaterialButton(
@@ -303,21 +321,22 @@ class _BookingConfirmationState extends State<BookingConfirmation> {
                     ),
                   ),
                   onPressed: () {
+/*
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => BookingConfirmation()));
+*/
                   },
                   color: Colors.blue,
-                  child: Text(
-                    'Pick',
+                  child: const Text(
+                    'Book Appointment',
                     style: TextStyle(
                       color: Colors.white,
                     ),
                   ),
                 ),
               )
-
             ],
           ),
         ),

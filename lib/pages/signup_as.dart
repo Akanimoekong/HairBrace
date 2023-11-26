@@ -20,7 +20,7 @@ class SignUpAs extends StatelessWidget {
                 child: Text(
                   "Sign Up as a",
                   style: TextStyle(
-                      color: Colors.pink,
+                      color: Colors.blue,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
@@ -50,9 +50,9 @@ class SignUpAs extends StatelessWidget {
                       ),
                     ),
                     maximumSize: Size(double.infinity, 100),
-                    backgroundColor: Colors.pinkAccent,
+                    backgroundColor: Colors.blue,
                     side: const BorderSide(
-                      color: Colors.pinkAccent,
+                      color: Colors.blue,
                     ),
                   ),
                   onPressed: () {
@@ -85,7 +85,7 @@ class SignUpAs extends StatelessWidget {
                     maximumSize: Size(double.infinity, 100),
                     backgroundColor: Colors.white,
                     side: const BorderSide(
-                      color: Colors.pinkAccent,
+                      color: Colors.blue,
                     ),
                   ),
                   onPressed: () {
@@ -95,7 +95,7 @@ class SignUpAs extends StatelessWidget {
                   child: const Text(
                     'HairStylist',
                     style: TextStyle(
-                      color: Colors.pink,
+                      color: Colors.blue,
                     ),
                   ),
                 ),
